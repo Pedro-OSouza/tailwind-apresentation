@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang="pt-br" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Apresentação Tailwind</title>
+    <link rel="stylesheet" href="./src/style.css">
+  </head>
+  <body class="bg-white text-gray-900 dark:bg-gray-900 dark:text-white"> 
+
+    <header class="sticky top-0 z-50 bg-white/80 dark:bg-gray-950/80 backdrop-blur border-b border-gray-200 dark:border-gray-800">
+  
+      <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
+
+        <!-- LOGO -->
+        <h1 class="text-xl font-bold text-gray-900 dark:text-white">
+          Tailwind Project
+        </h1>
+
+        <!-- MENU DESKTOP -->
+        <nav class="hidden md:flex gap-6 text-gray-700 dark:text-gray-300 font-medium">
+          <a href="#hero" class="hover:text-blue-500 transition">Início</a>
+          <a href="#about" class="hover:text-blue-500 transition">Sobre</a>
+          <a href="#layout" class="hover:text-blue-500 transition">Layout</a>
+          <a href="#interatividade" class="hover:text-blue-500 transition">Interação</a>
+          <a href="#codigo" class="hover:text-blue-500 transition">Código</a>
+        </nav>
+
+        <!-- BOTÃO DARK MODE -->
+        <button onclick="document.documentElement.classList.toggle('dark')"
+          class="hidden md:block px-3 py-2 rounded-lg bg-gray-900 text-white dark:bg-white dark:text-black transition">
+          Dark
+        </button>
+
+        <!-- BOTÃO MOBILE -->
+        <button id="menuBtn"
+          class="md:hidden text-gray-900 dark:text-white text-2xl">
+          ☰
+        </button>
+
+      </div>
+
+      <!-- MENU MOBILE -->
+      <div id="mobileMenu"
+        class="hidden md:hidden flex flex-col gap-4 px-6 pb-4 text-gray-700 dark:text-gray-300">
+
+        <a href="#hero" class="hover:text-blue-500">Início</a>
+        <a href="#about" class="hover:text-blue-500">Sobre</a>
+        <a href="#layout" class="hover:text-blue-500">Layout</a>
+        <a href="#interatividade" class="hover:text-blue-500">Interação</a>
+        <a href="#codigo" class="hover:text-blue-500">Código</a>
+
+      </div>
+
+    </header>
+
+    <main class="min-h-screen flex flex-col">
+
+      <section id="hero" class="relative w-full flex-1 
+        bg-gradient-to-br from-sky-500 via-blue-600 to-indigo-700
+        dark:from-gray-900 dark:via-gray-800 dark:to-gray-900"
+        style="background-image: url('./src/assets/banner.png'); background-position: center; background-size: cover;">
+
+          <!-- overlay -->
+          <div class="absolute inset-0 bg-black/50 dark:bg-black/70 z-10"></div>
+        
+        <div class="relative z-20 max-w-4xl mx-auto px-6 py-20 text-left">
+          
+          <div>
+            <h1 class="text-4xl md:text-5xl font-bold 
+              text-white dark:text-gray-100 mb-6">
+              Conheça o Tailwind CSS
+            </h1>
+  
+            <p class="text-lg 
+              text-white/80 dark:text-gray-400 mb-2">
+              O framework CSS utility-first que está em todo lugar.
+            </p>
+  
+            <p class="text-lg 
+              text-white/80 dark:text-gray-400 mb-6">
+              Construa designs rápidos e bonitos diretamente no seu HTML
+            </p>
+  
+            <a 
+              href="#about" 
+              class="inline-block 
+              bg-white text-indigo-600 
+              dark:bg-gray-100 dark:text-gray-900
+              px-6 py-3 rounded-lg font-medium shadow-md 
+              hover:scale-105 active:scale-95 transition-all duration-200">
+              Conheça o Tailwind
+            </a>
+          </div>
+
+        </div>
+      </section>
+
+      <section id="about">
+        <div class="max-w-5xl mx-auto px-6 py-16">
+          
+          <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6 text-center">
+            Como o Tailwind CSS funciona?
+          </h2>
+
+          <p class="text-gray-600 dark:text-gray-400 text-center max-w-2xl mx-auto mb-12">
+            O Tailwind CSS é um framework utility-first, o que significa que ele utiliza pequenas classes 
+            prontas para estilizar elementos diretamente no HTML. Em vez de criar estilos personalizados no CSS, 
+            você combina essas classes para construir interfaces rápidas, consistentes e modernas.
+          </p>
+
+          <div class="grid md:grid-cols-3 gap-10 text-center">
+            
+            <!-- CORES -->
+            <div>
+              <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-4">
+                Cores
+              </h3>
+
+              <div class="flex justify-center gap-2 mb-4">
+                <div class="w-10 h-10 bg-blue-500 rounded"></div>
+                <div class="w-10 h-10 bg-red-500 rounded"></div>
+                <div class="w-10 h-10 bg-green-500 rounded"></div>
+              </div>
+
+              <p class="text-gray-600 dark:text-gray-400">
+                Com classes como <code>bg-blue-500</code>, é possível aplicar cores de forma rápida e consistente, 
+                seguindo uma paleta padronizada.
+              </p>
+            </div>
+
+            <!-- TIPOGRAFIA -->
+            <div>
+              <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-4">
+                Tipografia
+              </h3>
+
+              <p class="text-sm text-gray-500">Texto pequeno</p>
+              <p class="text-lg font-medium">Texto médio</p>
+              <p class="text-2xl font-bold">Texto grande</p>
+
+              <p class="text-gray-600 dark:text-gray-400 mt-4">
+                O controle de texto é feito com classes como <code>text-xl</code> e <code>font-bold</code>, 
+                permitindo ajustar tamanho e peso facilmente.
+              </p>
+            </div>
+
+            <!-- ESPAÇAMENTO -->
+            <div>
+              <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-4">
+                Espaçamento
+              </h3>
+
+              <div class="bg-gray-200 dark:bg-gray-700 p-2 mb-2">p-2</div>
+              <div class="bg-gray-300 dark:bg-gray-600 p-4 mb-2">p-4</div>
+              <div class="bg-gray-400 dark:bg-gray-500 p-6">p-6</div>
+
+              <p class="text-gray-600 dark:text-gray-400 mt-4">
+                Espaçamentos são aplicados com classes como <code>p-4</code> e <code>m-2</code>, 
+                facilitando o controle do layout.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="layout">
+        <div class="max-w-5xl mx-auto px-6 py-16">
+          
+          <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6 text-center">
+            Layout e Responsividade
+          </h2>
+
+          <p class="text-gray-600 dark:text-gray-400 text-center max-w-2xl mx-auto mb-12">
+            O Tailwind CSS facilita a criação de layouts modernos usando Flexbox e Grid diretamente no HTML, 
+            além de oferecer um sistema de responsividade simples com breakpoints como md e lg.
+          </p>
+
+          <!-- FLEXBOX -->
+          <div class="mb-16">
+            <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-4 text-center">
+              Flexbox na prática
+            </h3>
+
+            <div class="flex flex-col md:flex-row gap-4">
+              
+              <div class="flex-1 bg-gray-100 dark:bg-gray-800 p-6 rounded-lg text-center">
+                <p class="font-medium text-gray-800 dark:text-gray-200">
+                  flex-col (mobile)
+                </p>
+              </div>
+
+              <div class="flex-1 bg-gray-100 dark:bg-gray-800 p-6 rounded-lg text-center">
+                <p class="font-medium text-gray-800 dark:text-gray-200">
+                  md:flex-row (desktop)
+                </p>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- GRID -->
+          <div class="mb-16">
+            <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-4 text-center">
+              Grid Responsivo
+            </h3>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              
+              <div class="bg-blue-100 dark:bg-blue-900 p-6 rounded-lg text-center">
+                <p class="text-gray-800 dark:text-white">1 coluna no mobile</p>
+              </div>
+
+              <div class="bg-green-100 dark:bg-green-900 p-6 rounded-lg text-center">
+                <p class="text-gray-800 dark:text-white">2 colunas no tablet</p>
+              </div>
+
+              <div class="bg-purple-100 dark:bg-purple-900 p-6 rounded-lg text-center">
+                <p class="text-gray-800 dark:text-white">3 colunas no desktop</p>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- BREAKPOINTS -->
+          <div>
+            <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-4 text-center">
+              Breakpoints
+            </h3>
+
+            <div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg text-center">
+              <p class="text-gray-700 dark:text-gray-300 mb-2">
+                Tailwind usa prefixos para responsividade:
+              </p>
+
+              <div class="flex flex-wrap justify-center gap-3 mt-4">
+                <span class="px-3 py-1 bg-white dark:bg-gray-700 rounded">sm:</span>
+                <span class="px-3 py-1 bg-white dark:bg-gray-700 rounded">md:</span>
+                <span class="px-3 py-1 bg-white dark:bg-gray-700 rounded">lg:</span>
+                <span class="px-3 py-1 bg-white dark:bg-gray-700 rounded">xl:</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <section id="interatividade">
+        <div class="max-w-5xl mx-auto px-6 py-16">
+
+          <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6 text-center">
+            Interatividade com Tailwind
+          </h2>
+
+          <p class="text-gray-600 dark:text-gray-400 text-center max-w-2xl mx-auto mb-12">
+            O Tailwind permite criar estados interativos como hover, focus e animações nativas sem escrever CSS manual.
+          </p>
+
+          <!-- INPUT + BOTÃO -->
+          <div class="flex flex-col md:flex-row gap-4 justify-center items-center mb-16">
+
+            <input
+              type="text"
+              placeholder="Digite algo..."
+              class="w-full md:w-80 px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 
+              bg-white dark:bg-gray-800 text-gray-900 dark:text-white
+              focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
+            />
+
+            <button
+              class="px-6 py-3 rounded-lg bg-blue-600 text-white font-medium
+              hover:bg-blue-700 hover:scale-105 active:scale-95 transition-all duration-200">
+              Enviar
+            </button>
+
+          </div>
+
+          <!-- ANIMAÇÕES -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+
+            <!-- PULSE -->
+            <div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg">
+              <div class="w-12 h-12 bg-red-500 rounded-full mx-auto mb-4 animate-pulse"></div>
+              <p class="text-gray-700 dark:text-gray-300 font-medium">
+                animate-pulse
+              </p>
+            </div>
+
+            <!-- BOUNCE -->
+            <div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg">
+              <div class="text-4xl mb-4 animate-bounce">⬇️</div>
+              <p class="text-gray-700 dark:text-gray-300 font-medium">
+                animate-bounce
+              </p>
+            </div>
+
+            <!-- SPIN -->
+            <div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg">
+              <div class="w-12 h-12 border-4 border-blue-500 border-t-transparent rounded-full mx-auto mb-4 animate-spin"></div>
+              <p class="text-gray-700 dark:text-gray-300 font-medium">
+                animate-spin
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      <section id="codigo">
+        <div class="max-w-5xl mx-auto px-6 py-16">
+
+          <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6 text-center">
+            Escrevendo com Tailwind CSS
+          </h2>
+
+          <p class="text-gray-600 dark:text-gray-400 text-center max-w-2xl mx-auto mb-12">
+            No Tailwind, os estilos são aplicados diretamente no HTML através de classes utilitárias, sem necessidade de CSS separado.
+          </p>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+            <!-- EXEMPLO 1 -->
+            <div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg">
+              <h3 class="text-xl font-semibold mb-4 text-gray-800 dark:text-white">
+                Botão estilizado
+              </h3>
+
+              <pre class="bg-gray-800 text-gray-100 p-4 rounded-lg text-sm overflow-x-auto border border-gray-700">
+      &lt;button class="bg-blue-600 text-white px-6 py-3 rounded-lg
+      hover:bg-blue-700 hover:scale-105
+      active:scale-95 transition-all duration-200"&gt;
+        Clique aqui
+      &lt;/button&gt;
+              </pre>
+            </div>
+
+            <!-- EXEMPLO 2 -->
+            <div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg">
+              <h3 class="text-xl font-semibold mb-4 text-gray-800 dark:text-white">
+                Card simples
+              </h3>
+
+              <pre class="bg-gray-800 text-gray-100 p-4 rounded-lg text-sm overflow-x-auto border border-gray-700">
+      &lt;div class="bg-white dark:bg-gray-900
+      p-6 rounded-xl shadow-md
+      hover:shadow-xl transition"&gt;
+
+        &lt;h2 class="text-xl font-bold text-gray-800 dark:text-white mb-2"&gt;
+          Título do card
+        &lt;/h2&gt;
+
+        &lt;p class="text-gray-600 dark:text-gray-400"&gt;
+          Conteúdo do card usando Tailwind.
+        &lt;/p&gt;
+
+      &lt;/div&gt;
+              </pre>
+            </div>
+
+          </div>
+
+          <div class="mt-12 text-center">
+            <p class="text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">
+              Cada classe no Tailwind representa uma propriedade CSS, permitindo construir interfaces completas diretamente no HTML.
+            </p>
+          </div>
+
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-t border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-950">
+  
+      <div class="max-w-5xl mx-auto px-6 py-10 text-center">
+
+        <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+          Projeto Tailwind CSS
+        </h3>
+
+        <p class="text-gray-600 dark:text-gray-400 mb-4">
+          Site desenvolvido para demonstrar os principais conceitos do Tailwind CSS.
+        </p>
+
+        <p class="text-sm text-gray-500 dark:text-gray-500">
+          © 2026 - Feito para apresentação acadêmica
+        </p>
+
+      </div>
+
+    </footer>
+
+    <script>
+      const btn = document.getElementById('menuBtn');
+      const menu = document.getElementById('mobileMenu');
+
+      btn.addEventListener('click', () => {
+        menu.classList.toggle('hidden');
+      });
+    </script>
+  </body>
+</html>
